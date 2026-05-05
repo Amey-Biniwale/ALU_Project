@@ -89,7 +89,7 @@ module top#(parameter WIDTH = 8, CMD_WIDTH = 4)(
                                         3: begin //SUB_CIN
                                                 if(INP_VALID == 3) begin
                                                         OFLOW_M <= OPA <= OPB;
-                                                        RES_M <= OPA - OPB - 1;
+                                                        RES_M <= OPA - OPB - CIN;
                                                 end
                                                 else ERR_M <= 1;
                                         end
