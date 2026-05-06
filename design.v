@@ -128,7 +128,7 @@ module top#(parameter WIDTH = 8, CMD_WIDTH = 4)(
                                                                 RES_M <= WAIT_RES_9;
                                                         end
                                                 end
-						else ERR_M <= 1;
+						ERR_M <= 1;
                                         end
                                         10: begin //MUL_SHI 
                                                 if(INP_VALID == 3) begin
