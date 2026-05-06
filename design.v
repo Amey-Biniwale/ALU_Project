@@ -85,7 +85,7 @@ module top#(parameter WIDTH = 8, CMD_WIDTH = 4)(
                                                         {COUT_M, RES_M[WIDTH-1:0]} <= OPA + OPB + CIN;
                                                         RES_M <= OPA + OPB + CIN;
                                                 end
-						else ERR_M <= 1;
+												else ERR_M <= 1;
                                         end
                                         3: begin //SUB_CIN
                                                 if(INP_VALID == 3) begin
@@ -128,7 +128,7 @@ module top#(parameter WIDTH = 8, CMD_WIDTH = 4)(
                                                                 RES_M <= WAIT_RES_9;
                                                         end
                                                 end
-						ERR_M <= 1;
+												else ERR_M <= 1;
                                         end
                                         10: begin //MUL_SHI 
                                                 if(INP_VALID == 3) begin
@@ -140,7 +140,7 @@ module top#(parameter WIDTH = 8, CMD_WIDTH = 4)(
                                                                 RES_M <= WAIT_RES_10;
                                                         end
                                                 end
-						else ERR_M <= 1;
+												else ERR_M <= 1;
                                         end
                                         11: begin //SIGNED_ADD 
                                                 if(INP_VALID == 3) begin
