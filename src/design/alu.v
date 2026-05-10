@@ -208,17 +208,17 @@ module top#(parameter WIDTH = 8, CMD_WIDTH = 4)(
                                                 if(INP_VALID[1]) RES_M[WIDTH-1:0] <= OPB << 1;
                                                 else ERR_M <= 1;
                                         end
-                                        12: begin //A_ROTATE_RIGHT
-						if(INP_VALID == 3) begin
-                                                	if(OPB[WIDTH-1:$clog2(WIDTH)+1] != 0) ERR_M <= 1;
-                                                	RES_M[WIDTH-1:0] <= (OPA << OPB[$clog2(WIDTH)-1:0]) | (OPA >> (WIDTH - OPB[$clog2(WIDTH)-1:0]));
-						end
-						else ERR_M <= 1;
-                                        end
-                                        13: begin //A_ROTATE_LEFT
+                                        12: begin //A_ROTATE_LEFT
 						if(INP_VALID == 3) begin
                                                 	if(OPB[WIDTH-1:$clog2(WIDTH)+1] != 0) ERR_M <= 1;
                                                 	RES_M[WIDTH-1:0] <= (OPA >> OPB[$clog2(WIDTH)-1:0]) | (OPA << (WIDTH - OPB[$clog2(WIDTH)-1:0]));
+						end
+						else ERR_M <= 1;
+                                        end
+                                        13: begin //A_ROTATE_RIGHT
+						if(INP_VALID == 3) begin
+                                                	if(OPB[WIDTH-1:$clog2(WIDTH)+1] != 0) ERR_M <= 1;
+                                                	RES_M[WIDTH-1:0] <= (OPA << OPB[$clog2(WIDTH)-1:0]) | (OPA >> (WIDTH - OPB[$clog2(WIDTH)-1:0]));
 						end
 						else ERR_M <= 1;
                                         end
